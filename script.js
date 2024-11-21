@@ -33,16 +33,24 @@ function render(cards) {
                 <td>${card.balance}₴</td>
                 <td><input type="password" value="${card.cvv}" readonly></td>
                 <td>
-                    <button class="btn btn-warning">
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </button>
                 </td>
                 <td>
-                    <button class="btn btn-danger">
+                    <button class="btn btn-danger" onclick="deleteCard('${card.cardNumber}')">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </td>
             </tr>
         `
     }
+}
+
+function deleteCard(number) {
+    fetch(url + number, {
+        method: "DELETE"
+    }).then(async function (response) {
+        getData();
+    })
 }
