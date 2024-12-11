@@ -1,7 +1,7 @@
 const ownerKey = "kfdduhdrmcjvfjkfud"
 const url = "https://thread-apricot-index.glitch.me/cards/"
 
-
+let test = "Hello";
 
 document.querySelector("#new").addEventListener("click", () => {
     fetch(url, {
