@@ -3,6 +3,7 @@ const url = "https://thread-apricot-index.glitch.me/cards/"
 
 console.log(url + ownerKey);
 
+let test = "Hello";
 
 document.querySelector("#new").addEventListener("click", () => {
     fetch(url, {
